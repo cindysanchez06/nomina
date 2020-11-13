@@ -8,6 +8,7 @@ namespace NominaApp.Models
 {
     public class Empleado
     {
+        public string id { get; set; }
         public string cedula { get; set; }
         public string nombre { get; set; }
         public double sueldo { get; set; }

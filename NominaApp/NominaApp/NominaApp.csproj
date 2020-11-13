@@ -58,6 +58,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Empleados.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
