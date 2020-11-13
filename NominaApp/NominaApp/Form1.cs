@@ -12,9 +12,20 @@ namespace NominaApp
 {
     public partial class Form1 : Form
     {
+        public List<Models.Empleado> ListaEmpleados;
         public Form1()
         {
             InitializeComponent();
+            ListaEmpleados = new List<Models.Empleado>();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Models.Empleado empleado = new Models.Empleado();
+            empleado.cedula = inputCedula.Text;
+
+            ListaEmpleados.Add(empleado);
+        }
+
     }
 }
