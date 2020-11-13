@@ -19,13 +19,12 @@ namespace NominaApp
             ListaEmpleados = new List<Models.Empleado>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Models.Empleado empleado = new Models.Empleado();
             empleado.cedula = inputCedula.Text;
 
             ListaEmpleados.Add(empleado);
         }
-
     }
 }
