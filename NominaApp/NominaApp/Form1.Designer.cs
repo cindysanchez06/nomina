@@ -60,6 +60,9 @@ namespace NominaApp
             this.nhrn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhedn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxARP = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,8 +244,9 @@ namespace NominaApp
             this.nhedd,
             this.nhrn,
             this.nhen,
-            this.nhedn});
-            this.dataGridEmpleados.Location = new System.Drawing.Point(75, 274);
+            this.nhedn,
+            this.id});
+            this.dataGridEmpleados.Location = new System.Drawing.Point(81, 266);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
             this.dataGridEmpleados.ReadOnly = true;
             this.dataGridEmpleados.Size = new System.Drawing.Size(898, 228);
@@ -302,9 +306,42 @@ namespace NominaApp
             this.nhedn.Name = "nhedn";
             this.nhedn.ReadOnly = true;
             // 
+            // comboBoxARP
+            // 
+            this.comboBoxARP.FormattingEnabled = true;
+            this.comboBoxARP.Items.AddRange(new object[] {
+            "CLASE I",
+            "CLASE II",
+            "CLASE III",
+            "CLASE IV",
+            "CLASE V"});
+            this.comboBoxARP.Location = new System.Drawing.Point(75, 193);
+            this.comboBoxARP.Name = "comboBoxARP";
+            this.comboBoxARP.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxARP.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(900, 519);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Editar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1037, 582);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBoxARP);
             this.Controls.Add(this.dataGridEmpleados);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.inputNhrn);
@@ -365,6 +402,9 @@ namespace NominaApp
         private System.Windows.Forms.DataGridViewTextBoxColumn nhrn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhen;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhedn;
+        private System.Windows.Forms.ComboBox comboBoxARP;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
 

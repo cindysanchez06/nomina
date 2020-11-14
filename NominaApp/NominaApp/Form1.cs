@@ -17,9 +17,11 @@ namespace NominaApp
             InitializeComponent();
         }
 
+        public string idSelected;
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(inputCedula.Text) || string.IsNullOrEmpty(inputNombre.Text) || string.IsNullOrEmpty(inputSueldo.Text) || string.IsNullOrEmpty(inputDiasTrabajados.Text) || string.IsNullOrEmpty(inputNhed.Text) || string.IsNullOrEmpty(inputNhen.Text) || string.IsNullOrEmpty(inputNhedd.Text) || string.IsNullOrEmpty(inputNhedn.Text) || string.IsNullOrEmpty(inputNhrn.Text))
+            if (string.IsNullOrEmpty(inputCedula.Text) || string.IsNullOrEmpty(inputNombre.Text) || string.IsNullOrEmpty(inputSueldo.Text) || string.IsNullOrEmpty(inputDiasTrabajados.Text) || string.IsNullOrEmpty(inputNhed.Text) || string.IsNullOrEmpty(inputNhen.Text) || string.IsNullOrEmpty(inputNhedd.Text) || string.IsNullOrEmpty(inputNhedn.Text) || string.IsNullOrEmpty(inputNhrn.Text) || string.IsNullOrEmpty(comboBoxARP.Text))
             {
                 MessageBox.Show("Todos los campos son requeridos");
             }
@@ -35,8 +37,20 @@ namespace NominaApp
                 empleado.nhedd = int.Parse(inputNhedd.Text);
                 empleado.nhedn = int.Parse(inputNhedn.Text);
                 empleado.nhrn = int.Parse(inputNhrn.Text);
-                Models.Empleados.AgregarEmpleado(empleado);
+                empleado.nivelARP = comboBoxARP.Text;
+                if (string.IsNullOrEmpty(idSelected))
+                {
+                    empleado.id = Guid.NewGuid().ToString();
+                    Models.Empleados.AgregarEmpleado(empleado);
+                }
+                else
+                {
+                    empleado.id = idSelected;
+                    Models.Empleados.EditarEmpleado(empleado);
+                }
                 this.LlenarGrilla();
+                this.LimpiarElementos();
+                idSelected = null;
             }
         }
 
@@ -57,8 +71,46 @@ namespace NominaApp
                 dataGridEmpleados[6, i].Value = empleado.nhedd;
                 dataGridEmpleados[7, i].Value = empleado.nhedn;
                 dataGridEmpleados[8, i].Value = empleado.nhrn;
+                dataGridEmpleados[9, i].Value = empleado.id;
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(dataGridEmpleados.SelectedRows.Count > 0)
+            {
+                idSelected = dataGridEmpleados.SelectedRows[0].Cells[9].Value.ToString();
+                Models.Empleado empleado = Models.Empleados.ObtenerEmpleado(idSelected);
+
+                inputCedula.Text = empleado.cedula;
+                inputNombre.Text = empleado.nombre;
+                inputSueldo.Text = empleado.sueldo.ToString();
+                inputDiasTrabajados.Text = empleado.diasTrabajos.ToString() ;
+                inputNhed.Text = empleado.nhed.ToString();
+                inputNhen.Text =  empleado.nhen.ToString();
+                inputNhedd.Text =  empleado.nhedd.ToString() ;
+                inputNhedn.Text = empleado.nhedn.ToString() ;
+                inputNhrn.Text =  empleado.nhrn.ToString() ;
+                comboBoxARP.Text = empleado.nivelARP;
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
+
+        public void LimpiarElementos()
+        {
+            inputCedula.Clear();
+            inputNombre.Clear();
+            inputSueldo.Clear();
+            inputDiasTrabajados.Clear();
+            inputNhed.Clear();
+            inputNhen.Clear();
+            inputNhedd.Clear();
+            inputNhedn.Clear();
+            inputNhrn.Clear();
+            comboBoxARP.SelectedIndex = -1;
+        }
     }
 }
