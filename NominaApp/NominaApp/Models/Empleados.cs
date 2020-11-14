@@ -12,6 +12,10 @@ namespace NominaApp.Models
 
         public static List<Empleado> ObtenerEmpleados() {
             return empleados;
+        } 
+        
+        public static Empleado ObtenerEmpleado(string id) {
+            return empleados.FirstOrDefault(e => e.id == id);
         }
 
         public static Empleado AgregarEmpleado(Empleado empleado)
@@ -22,9 +26,10 @@ namespace NominaApp.Models
 
         public static Empleado EditarEmpleado(Empleado empleado)
         {
-            Empleado empleadoEditar = empleados.Where(e => e.id == empleado.id).FirstOrDefault();
-            empleadoEditar = empleado;
-            return empleadoEditar;
+            int index = empleados.FindIndex(e => e.id == empleado.id);
+
+            empleados[index] = empleado;
+            return empleado;
         }
 
         public static void EliminarEmpleado(Empleado empleado)

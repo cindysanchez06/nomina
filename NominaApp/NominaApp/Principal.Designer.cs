@@ -31,8 +31,8 @@ namespace NominaApp
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -58,6 +58,13 @@ namespace NominaApp
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
+            // crearToolStripMenuItem
+            // 
+            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.crearToolStripMenuItem.Text = "Crear";
+            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
+            // 
             // nominaToolStripMenuItem
             // 
             this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -67,24 +74,17 @@ namespace NominaApp
             this.nominaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.nominaToolStripMenuItem.Text = "Nomina";
             // 
-            // crearToolStripMenuItem
-            // 
-            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.crearToolStripMenuItem.Text = "Crear";
-            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
-            // 
             // porEmpleadoToolStripMenuItem
             // 
             this.porEmpleadoToolStripMenuItem.Name = "porEmpleadoToolStripMenuItem";
-            this.porEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.porEmpleadoToolStripMenuItem.Text = "Por Empleado";
             this.porEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.porEmpleadoToolStripMenuItem_Click);
             // 
             // todosToolStripMenuItem
             // 
             this.todosToolStripMenuItem.Name = "todosToolStripMenuItem";
-            this.todosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.todosToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.todosToolStripMenuItem.Text = "Todos";
             // 
             // Principal
