@@ -19,6 +19,10 @@ namespace NominaApp.Models
             this.empleado = empleado;
         }
 
+        public Calculadora ObtenerNomina() {
+            return nomina;
+        }
+
         public void CrearNomina() {
             this.ObtenerSalarioBasico();
             this.ObtenerAuxilio();
@@ -89,7 +93,7 @@ namespace NominaApp.Models
             nomina.totalDevengado = nomina.basico + nomina.auxilio + nomina.totalExtras;
         }
         void ObtenerIBC() {
-            nomina.ibc = nomina.totalDevengado - nomina.totalExtras;
+            nomina.ibc = nomina.totalDevengado - nomina.auxilio;
         }
         void ObtenerSalud(){
             nomina.salud = nomina.ibc * 4 /100;
@@ -173,7 +177,7 @@ namespace NominaApp.Models
         }
         void ObtenerPensionParafiscal()
         {
-            nomina.saludParafiscal = nomina.ibc * 12 / 100;
+            nomina.pensionParafiscal = nomina.ibc * 12 / 100;
         }
         void ObtenerARP()
         {

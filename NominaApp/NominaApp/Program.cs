@@ -23,15 +23,24 @@ namespace NominaApp
             {
                  cedula= "11334500",
                  sueldo= 12000000,
-                 diasTrabajos= 22,
-                 nhed= 4,
+                 diasTrabajos= 30,
+                 nhed= 7,
                  nhen= 5,
-                 nhedd= 0,
-                 nhedn= 7,
-                 nhrn= 10,
+                 nhedd= 6,
+                 nhedn= 4,
+                 nhrn= 15,
                  id= Guid.NewGuid().ToString(),
-                 nombre= "CARLOS PEREZ"
+                 nombre= "CARLOS PEREZ",
+                 nivelARP= "CLASE V"
             });
+
+            foreach (var item in Models.Empleados.ObtenerEmpleados())
+            {
+                Models.EjecutarNomina nominaEmpleado = new Models.EjecutarNomina(item);
+                nominaEmpleado.CrearNomina();
+                var nomina = nominaEmpleado.ObtenerNomina();
+                Console.WriteLine(nomina);
+            }
         }
     }
 }

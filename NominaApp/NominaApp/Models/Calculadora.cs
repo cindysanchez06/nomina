@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NominaApp.Models
 {
-    class Calculadora
+    public class Calculadora
     {
         public double basico { get; set; }
         public double auxilio { get; set; }
