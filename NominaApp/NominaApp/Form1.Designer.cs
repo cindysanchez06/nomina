@@ -60,25 +60,28 @@ namespace NominaApp
             this.nhrn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhedn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxARP = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // inputCedula
             // 
-            this.inputCedula.Location = new System.Drawing.Point(77, 89);
+            this.inputCedula.Location = new System.Drawing.Point(81, 90);
             this.inputCedula.Name = "inputCedula";
-            this.inputCedula.Size = new System.Drawing.Size(152, 20);
+            this.inputCedula.Size = new System.Drawing.Size(199, 20);
             this.inputCedula.TabIndex = 0;
+            this.inputCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(782, 168);
+            this.button1.Location = new System.Drawing.Point(736, 194);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.TabIndex = 10;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -95,7 +98,7 @@ namespace NominaApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 73);
+            this.label1.Location = new System.Drawing.Point(78, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 3;
@@ -103,15 +106,15 @@ namespace NominaApp
             // 
             // inputNombre
             // 
-            this.inputNombre.Location = new System.Drawing.Point(278, 89);
+            this.inputNombre.Location = new System.Drawing.Point(81, 141);
             this.inputNombre.Name = "inputNombre";
             this.inputNombre.Size = new System.Drawing.Size(203, 20);
-            this.inputNombre.TabIndex = 4;
+            this.inputNombre.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(523, 73);
+            this.label2.Location = new System.Drawing.Point(78, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
@@ -119,22 +122,24 @@ namespace NominaApp
             // 
             // inputSueldo
             // 
-            this.inputSueldo.Location = new System.Drawing.Point(526, 89);
+            this.inputSueldo.Location = new System.Drawing.Point(81, 194);
             this.inputSueldo.Name = "inputSueldo";
-            this.inputSueldo.Size = new System.Drawing.Size(100, 20);
-            this.inputSueldo.TabIndex = 6;
+            this.inputSueldo.Size = new System.Drawing.Size(203, 20);
+            this.inputSueldo.TabIndex = 2;
+            this.inputSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // inputDiasTrabajados
             // 
-            this.inputDiasTrabajados.Location = new System.Drawing.Point(689, 89);
+            this.inputDiasTrabajados.Location = new System.Drawing.Point(336, 90);
             this.inputDiasTrabajados.Name = "inputDiasTrabajados";
             this.inputDiasTrabajados.Size = new System.Drawing.Size(100, 20);
-            this.inputDiasTrabajados.TabIndex = 7;
+            this.inputDiasTrabajados.TabIndex = 4;
+            this.inputDiasTrabajados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(686, 73);
+            this.label3.Location = new System.Drawing.Point(333, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 8;
@@ -142,15 +147,16 @@ namespace NominaApp
             // 
             // inputNhed
             // 
-            this.inputNhed.Location = new System.Drawing.Point(77, 140);
+            this.inputNhed.Location = new System.Drawing.Point(336, 141);
             this.inputNhed.Name = "inputNhed";
             this.inputNhed.Size = new System.Drawing.Size(100, 20);
-            this.inputNhed.TabIndex = 9;
+            this.inputNhed.TabIndex = 5;
+            this.inputNhed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 124);
+            this.label4.Location = new System.Drawing.Point(333, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
@@ -159,7 +165,7 @@ namespace NominaApp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(493, 124);
+            this.label5.Location = new System.Drawing.Point(532, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 11;
@@ -167,15 +173,16 @@ namespace NominaApp
             // 
             // inputNhen
             // 
-            this.inputNhen.Location = new System.Drawing.Point(496, 140);
+            this.inputNhen.Location = new System.Drawing.Point(534, 141);
             this.inputNhen.Name = "inputNhen";
             this.inputNhen.Size = new System.Drawing.Size(100, 20);
-            this.inputNhen.TabIndex = 12;
+            this.inputNhen.TabIndex = 7;
+            this.inputNhen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 124);
+            this.label6.Location = new System.Drawing.Point(333, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 13);
             this.label6.TabIndex = 13;
@@ -183,15 +190,16 @@ namespace NominaApp
             // 
             // inputNhedd
             // 
-            this.inputNhedd.Location = new System.Drawing.Point(225, 140);
+            this.inputNhedd.Location = new System.Drawing.Point(336, 194);
             this.inputNhedd.Name = "inputNhedd";
             this.inputNhedd.Size = new System.Drawing.Size(100, 20);
-            this.inputNhedd.TabIndex = 14;
+            this.inputNhedd.TabIndex = 6;
+            this.inputNhedd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(621, 124);
+            this.label7.Location = new System.Drawing.Point(532, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 15;
@@ -199,15 +207,16 @@ namespace NominaApp
             // 
             // inputNhedn
             // 
-            this.inputNhedn.Location = new System.Drawing.Point(624, 140);
+            this.inputNhedn.Location = new System.Drawing.Point(535, 194);
             this.inputNhedn.Name = "inputNhedn";
             this.inputNhedn.Size = new System.Drawing.Size(100, 20);
-            this.inputNhedn.TabIndex = 16;
+            this.inputNhedn.TabIndex = 8;
+            this.inputNhedn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(368, 124);
+            this.label8.Location = new System.Drawing.Point(531, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 17;
@@ -215,10 +224,11 @@ namespace NominaApp
             // 
             // inputNhrn
             // 
-            this.inputNhrn.Location = new System.Drawing.Point(361, 140);
+            this.inputNhrn.Location = new System.Drawing.Point(534, 92);
             this.inputNhrn.Name = "inputNhrn";
             this.inputNhrn.Size = new System.Drawing.Size(100, 20);
-            this.inputNhrn.TabIndex = 18;
+            this.inputNhrn.TabIndex = 7;
+            this.inputNhrn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label9
             // 
@@ -246,7 +256,7 @@ namespace NominaApp
             this.nhen,
             this.nhedn,
             this.id});
-            this.dataGridEmpleados.Location = new System.Drawing.Point(81, 266);
+            this.dataGridEmpleados.Location = new System.Drawing.Point(81, 276);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
             this.dataGridEmpleados.ReadOnly = true;
             this.dataGridEmpleados.Size = new System.Drawing.Size(898, 228);
@@ -306,6 +316,13 @@ namespace NominaApp
             this.nhedn.Name = "nhedn";
             this.nhedn.ReadOnly = true;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
             // comboBoxARP
             // 
             this.comboBoxARP.FormattingEnabled = true;
@@ -315,14 +332,14 @@ namespace NominaApp
             "CLASE III",
             "CLASE IV",
             "CLASE V"});
-            this.comboBoxARP.Location = new System.Drawing.Point(75, 193);
+            this.comboBoxARP.Location = new System.Drawing.Point(736, 89);
             this.comboBoxARP.Name = "comboBoxARP";
             this.comboBoxARP.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxARP.TabIndex = 21;
+            this.comboBoxARP.TabIndex = 9;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(900, 519);
+            this.button2.Location = new System.Drawing.Point(808, 519);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 22;
@@ -330,16 +347,30 @@ namespace NominaApp
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // id
+            // button3
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.button3.Location = new System.Drawing.Point(904, 519);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Borrar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(733, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Clase ARP";
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1037, 582);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBoxARP);
             this.Controls.Add(this.dataGridEmpleados);
@@ -364,6 +395,7 @@ namespace NominaApp
             this.Controls.Add(this.button1);
             this.Controls.Add(this.inputCedula);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -373,7 +405,6 @@ namespace NominaApp
         #endregion
 
         private System.Windows.Forms.TextBox inputCedula;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelCedula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox inputNombre;
@@ -392,6 +423,7 @@ namespace NominaApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox inputNhrn;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridEmpleados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -405,6 +437,8 @@ namespace NominaApp
         private System.Windows.Forms.ComboBox comboBoxARP;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label10;
     }
 }
 

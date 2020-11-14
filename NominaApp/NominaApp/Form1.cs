@@ -15,6 +15,7 @@ namespace NominaApp
         public Form1()
         {
             InitializeComponent();
+            LlenarGrilla();
         }
 
         public string idSelected;
@@ -111,6 +112,41 @@ namespace NominaApp
             inputNhedn.Clear();
             inputNhrn.Clear();
             comboBoxARP.SelectedIndex = -1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridEmpleados.SelectedRows.Count > 0)
+            {
+                String empleadoBorrar= dataGridEmpleados.SelectedRows[0].Cells[9].Value.ToString();
+                Models.Empleado empleado = Models.Empleados.ObtenerEmpleado(empleadoBorrar);
+                Models.Empleados.EliminarEmpleado(empleado);
+                LlenarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
+
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

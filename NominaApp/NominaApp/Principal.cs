@@ -15,24 +15,41 @@ namespace NominaApp
         public Principal()
         {
             InitializeComponent();
+            Models.Empleados.AgregarEmpleado(new Models.Empleado()
+            {
+                cedula = "113345",
+                sueldo = 877803,
+                diasTrabajos = 30,
+                nhed = 9,
+                nhen = 2,
+                nhedd = 5,
+                nhedn = 9,
+                nhrn = 12,
+                id = Guid.NewGuid().ToString(),
+                nombre = "CARLOS PEREZ",
+                nivelARP = "CLASE IV"
+            });
+
         }
-        // Se abre el formulario de buscar empleado por cedula
-        private void porEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formEmpleadosCedula = new EmpleadoCedula();
-            formEmpleadosCedula.Show();
+            NominaEmpleado empleado = new NominaEmpleado();
+
+            empleado.Show();
         }
-        // Se abre el formulario de generacion de nomina
+
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form1 empleado = new Form1();
 
+            empleado.Show();
         }
-        // Se abre el formulario de crear empleado
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void generalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formEmpleados = new Form1();
-            formEmpleados.Show();
+            NominaGeneral nominaGeneral = new NominaGeneral();
+            nominaGeneral.Show();
         }
-
     }
 }

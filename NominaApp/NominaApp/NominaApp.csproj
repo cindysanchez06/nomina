@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpleadoCedula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmpleadoCedula.Designer.cs">
-      <DependentUpon>EmpleadoCedula.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +56,18 @@
     <Compile Include="Models\EjecutarNomina.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Empleados.cs" />
+    <Compile Include="NominaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NominaEmpleado.Designer.cs">
+      <DependentUpon>NominaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NominaGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NominaGeneral.Designer.cs">
+      <DependentUpon>NominaGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NominaEmpleado.resx">
+      <DependentUpon>NominaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NominaGeneral.resx">
+      <DependentUpon>NominaGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

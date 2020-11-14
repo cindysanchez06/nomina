@@ -122,7 +122,7 @@ namespace NominaApp.Models
             {
                 nomina.fondoSolidario = nomina.totalDevengado * 1.8 / 100;
             }
-            else if (nomina.totalDevengado >= 20)
+            else if (nomina.totalDevengado >= 20* SalarioMinimo)
             {
                 nomina.fondoSolidario = nomina.totalDevengado * 2 / 100;
             }
