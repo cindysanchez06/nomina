@@ -11,6 +11,7 @@ namespace NominaApp.Models
         public string id { get; set; }
         public string cedula { get; set; }
         public string nombre { get; set; }
+        public string nivelARP { get; set; }
         public double sueldo { get; set; }
         public int diasTrabajos { get; set; }
         public int nhed { get; set; }
