@@ -8,6 +8,7 @@ namespace NominaApp.Models
 {
     public class EjecutarNomina
     {
+        // Variables constantes para sacar nomina
         private const int DiasMes = 30;
         private const double SalarioMinimo = 877803;
         private const double auxilio = 102854;
@@ -22,7 +23,7 @@ namespace NominaApp.Models
         public Calculadora ObtenerNomina() {
             return nomina;
         }
-
+        // Calcular nomina de un empleado
         public void CrearNomina() {
             this.ObtenerSalarioBasico();
             this.ObtenerAuxilio();
