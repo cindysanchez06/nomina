@@ -17,11 +17,11 @@ namespace NominaApp
         {
             InitializeComponent();
         }
-
+        // Ejecutar nomina de todos los empleados
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-
+            // Se obtiene todos los empleados y se agregan a la grilla todos los datos de la nomina. 
             foreach (var empleadoSeleccionado in Models.Empleados.ObtenerEmpleados())
             {
 
@@ -55,7 +55,7 @@ namespace NominaApp
             }
 
         }
-
+        // Convierte el numero, lo redondea y lo formatea en moneda.
         private String convertNumber(Double number) {
             return Math.Round(number).ToString("C", CultureInfo.CurrentCulture);
         }
