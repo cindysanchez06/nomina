@@ -51,5 +51,34 @@ namespace NominaApp
             NominaGeneral nominaGeneral = new NominaGeneral();
             nominaGeneral.Show();
         }
+
+        private void nominaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 empleado = new Form1();
+            empleado.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NominaEmpleado empleado = new NominaEmpleado();
+
+            empleado.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NominaGeneral nominaGeneral = new NominaGeneral();
+            nominaGeneral.Show();
+        }
     }
 }

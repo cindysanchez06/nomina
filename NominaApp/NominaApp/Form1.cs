@@ -148,5 +148,10 @@ namespace NominaApp
         {
 
         }
+
+        private void dataGridEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
